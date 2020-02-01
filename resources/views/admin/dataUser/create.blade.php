@@ -25,31 +25,30 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-8">
-                                        <form action="/dataUser/store" method="post" role="form" autocomplete="off">
+                                        <form action="/dataUser/create" method="post" role="form" autocomplete="off">
                                             {{csrf_field()}}
                                             <div class="form-group">
                                               <label>Role</label>
                                               <select class="form-control" name="id_role">
                                                 <option value="1">Admin</option>
-                                                <option value="2">Pemohon</option>
-                                                <option value="3">Staff Pengembang Kompetensi</option>
-                                                <option value="4">Kepala Sub Bagian Pengembang Kompetensi</option>
-                                                <option value="5">Binbangkum</option>
+                                                <option value="2">Pemilik</option>
+                                                <option value="3">Akuntan</option>
+                                                <option value="4">Kasir</option>
                                               </select>
                                             </div>
                                             <div class="form-group">
-                                              <label>Email</label>
+                                              <label>Username</label>
                                               <div class="input-group">
                                                 <div class="input-group-prepend">
                                                   <div class="input-group-text">
                                                     <i class="fas fa-user-alt"></i>
                                                   </div>
                                                 </div>
-                                                <input type="text" class="form-control" name="email" autocomplete="off">
+                                                <input type="text" class="form-control" name="username" autocomplete="off">
                                               </div>
-                                              @if($errors->has('email'))
+                                              @if($errors->has('username'))
                                                 <div class="text-danger" style="padding: 5px;">
-                                                    {{ $errors->first('email')}}
+                                                    {{ $errors->first('username')}}
                                                 </div>
                                               @endif
                                             </div>
@@ -90,11 +89,8 @@
                                     </div>
                                 </div>
                                 <div class="card-footer bg-whitesmoke">
-                                    <hr/>
-                                    <div style="float: left;">
-                                        <a href="{{url('/dataUser/index')}}" class="btn btn-warning">Kembali</a>
-                                    </div>
                                     <div style="float: right;">
+                                        <a href="{{url('/dataUser')}}" class="btn btn-warning">Kembali</a>
                                         <button type="submit" class="btn btn-success">Simpan Data</button>
                                     </div>
                                 </div>

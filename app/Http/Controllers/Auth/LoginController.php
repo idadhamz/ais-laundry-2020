@@ -27,9 +27,9 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/dashboard';
 
-    public function email()
+    public function username()
     {
-       return 'email'; //or whatever field
+       return 'username'; //or whatever field
     }
 
     /**
